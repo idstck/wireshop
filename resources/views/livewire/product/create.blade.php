@@ -2,17 +2,17 @@
     <div class="col-md-8">
         <div class="card">
             <div class="card-body">
-                <form method="POST" enctype="multipart/form-data">
+                <form wire:submit.prevent="store" method="POST" enctype="multipart/form-data">
 
                     <div class="form-group">
 
                         <div class="form-row">
                             <div class="col">
-                              <input type="text" class="form-control" placeholder="Title">
+                              <input wire:model="title" type="text" class="form-control" placeholder="Title">
                             </div>
 
                             <div class="col">
-                                <input type="text" class="form-control" placeholder="Price">
+                                <input wire:model="price" type="text" class="form-control" placeholder="Price">
                             </div>
                         </div>
 
@@ -22,7 +22,7 @@
 
                         <div class="form-row">
                             <div class="col">
-                                <input type="text" class="form-control" placeholder="Description">
+                                <input wire:model="description" type="text" class="form-control" placeholder="Description">
                             </div>
                         </div>
 
@@ -34,7 +34,7 @@
                             <div class="col">
                                 <div class="form-group">
                                     <label for="">Image</label>
-                                    <input type="file" class="form-control-file" id="image">
+                                    <input wire:model="image" type="file" class="form-control-file" id="image">
                                 </div>
                             </div>
                         </div>

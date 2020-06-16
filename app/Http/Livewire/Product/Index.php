@@ -19,7 +19,8 @@ class Index extends Component
     ];
 
     protected $listeners = [
-        'formClose' => 'formCloseHandler'
+        'formClose' => 'formCloseHandler',
+        'productStored' => 'productStoredHandler'
     ];
 
     public function mount()
@@ -38,6 +39,11 @@ class Index extends Component
     }
 
     public function formCloseHandler()
+    {
+        $this->formVisible = false;
+    }
+
+    public function productStoredHandler()
     {
         $this->formVisible = false;
     }
