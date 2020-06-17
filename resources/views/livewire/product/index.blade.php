@@ -1,7 +1,11 @@
 <div class="container">
 
     @if ($formVisible)
-        @livewire('product.create')
+        @if (! $formUpdate)
+            @livewire('product.create')
+        @else
+            @livewire('product.update')
+        @endif
     @endif
 
     <div class="row justify-content-center">
@@ -54,7 +58,7 @@
                                 <td>{{ $product->title }}</td>
                                 <td>Rp{{ number_format($product->price,2,",",".") }}</td>
                                 <td>
-                                    <button class="btn btn-sm btn-info text-white">Edit</button>
+                                    <button wire:click="editProduct({{ $product->id }})" class="btn btn-sm btn-info text-white">Edit</button>
                                     <button class="btn btn-sm btn-danger">Delete</button>
                                 </td>
                             </tr>
