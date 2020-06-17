@@ -21,7 +21,8 @@ class Index extends Component
 
     protected $listeners = [
         'formClose' => 'formCloseHandler',
-        'productStored' => 'productStoredHandler'
+        'productStored' => 'productStoredHandler',
+        'productUpdated' => 'productUpdatedHandler'
     ];
 
     public function mount()
@@ -56,5 +57,11 @@ class Index extends Component
         $this->formVisible = true;
         $product = Product::find($productId);
         $this->emit('editProduct', $product);
+    }
+
+    public function productUpdatedHandler()
+    {
+        $this->formVisible = false;
+        session()->flash('message', 'Your product was updated');
     }
 }
