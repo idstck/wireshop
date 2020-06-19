@@ -21,7 +21,7 @@
                     <p class="text-white">
                         {{ $product->description }}
                     </p>
-                    <button type="button" class="btn btn-sm btn-block btn-outline-secondary text-white">Add to cart</button>
+                    <button wire:click="addToCart({{ $product->id }})" type="button" class="btn btn-sm btn-block btn-outline-secondary text-white">Add to cart</button>
                 </div>
             </div>
         </div>
