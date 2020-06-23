@@ -17,7 +17,7 @@
                                 <td>{{ $product->title }}</td>
                                 <td>Rp{{ number_format($product->price,2,",",".") }}</td>
                                 <td>
-                                    <button class="btn btn-sm btn-danger">Remove</button>
+                                    <button wire:click="removeFromCart({{ $product->id }})" class="btn btn-sm btn-danger">Remove</button>
                                 </td>
                             </tr>
                             @endforeach
